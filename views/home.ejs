@@ -1,0 +1,12 @@
+<%- include("partials/header") %> 
+<h1>Home</h1>
+<p><%= home %> </p>
+<% posts.forEach(function(post){ %> 
+    <form action="/delete" method="post">
+    <h1><%= post.title %> </h1>
+    <p><%= post.post.substring(0,100) + " ..." %> <a href="/posts/<%= post._id %>">View Page</a> <button type="submit" name="blogId" value="<%=post._id %>" id="trash"><i  class="fa-solid fa-trash-can"></i></button></p>
+    </form>
+    
+<% }) %> 
+
+<%- include("partials/footer") %> 
